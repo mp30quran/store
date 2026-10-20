@@ -3,242 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيقات القرآن الكريم والدينية</title>
-    <!-- Google Fonts for professional Arabic typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>تطبيقات القرآن الكريم | المنصة الرسمية</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Tajawal & Amiri -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        tajawal: ['Tajawal', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary-color: #2c6f1f;
-            --primary-dark: #1e4d14;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-            --text-color: #333333;
-            --text-muted: #666666;
-            --border-radius: 12px;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
-            font-family: 'Cairo', Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.8;
-            padding: 20px;
+            font-family: 'Tajawal', sans-serif;
+            background-color: #0c1a13;
+            color: #f3f4f6;
         }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-            overflow: hidden;
+        .quran-title {
+            font-family: 'Amiri', serif;
         }
-
-        /* Header Section */
-        .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
+        .hero-bg {
+            background: radial-gradient(circle at top, rgba(21, 128, 61, 0.25) 0%, rgba(12, 26, 19, 1) 70%);
         }
-
-        .header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 10px;
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
-
-        .header p {
-            font-size: 18px;
-            opacity: 0.9;
-        }
-
-        /* Content Sections */
-        .content {
-            padding: 30px;
-        }
-
-        .section-title {
-            font-size: 22px;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 8px;
-            font-weight: 700;
-        }
-
-        p {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        /* Social & Links Cards */
-        .links-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .card-link {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .card-link:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(44, 111, 31, 0.1);
-            border-color: var(--primary-color);
-        }
-
-        .card-link p {
-            font-weight: 600;
-            color: var(--text-color);
-            margin-bottom: 12px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: background-color 0.2s;
-        }
-
-        .btn:hover {
-            background-color: var(--primary-dark);
-        }
-
-        /* Guides Section (Images) */
-        .guides-section {
-            margin-top: 40px;
-        }
-
-        .guide-card {
-            background: #f8f9fa;
-            border: 1px solid #e9ecef;
-            border-radius: var(--border-radius);
-            padding: 20px;
-            margin-bottom: 25px;
-            text-align: center;
-        }
-
-        .guide-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-            font-size: 20px;
-        }
-
-        .guide-img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border: 1px solid #ddd;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: #f1f8ef;
-            padding: 20px;
-            border-radius: var(--border-radius);
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .contact a {
-            color: var(--primary-color);
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--primary-dark);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 16px;
-        }
-
-        @media (max-width: 600px) {
-            .header h1 { font-size: 26px; }
-            .container { margin: 10px; }
+        .glass-card:hover {
+            border-color: rgba(34, 197, 94, 0.3);
         }
     </style>
 </head>
-<body>
+<body class="antialiased min-h-screen flex flex-col justify-between">
 
-<div class="container">
-    <!-- Header -->
-    <div class="header">
-        <h1>بسم الله الرحمن الرحيم</h1>
-        <p>نحن نقدم مجموعة من التطبيقات الدينية المميزة للجوال</p>
-    </div>
-
-    <div class="content">
-        <!-- Social Links Grid -->
-        <div class="section-title">قنواتنا وساحات التواصل</div>
-        <div class="links-grid">
-            <div class="card-link">
-                <p>قناة تيليجرام تلاوات خاشعة</p>
-                <a href="https://t.me/mp30qurantv" target="_blank" class="btn">انضم إلى القناة</a>
+    <!-- Header / Navbar -->
+    <header class="border-b border-white/10 backdrop-blur-md sticky top-0 z-50 bg-[#0c1a13]/80">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-emerald-400 flex items-center justify-center text-white shadow-lg shadow-emerald-600/30">
+                    <i class="fa-solid me-0 fa-book-quran text-xl"></i>
+                </div>
+                <span class="font-bold text-xl tracking-wide text-white">mp30quran</span>
             </div>
-            <div class="card-link">
-                <p>صفحة الفيس بوك الرسمية</p>
-                <a href="https://facebook.com/mp30quran" target="_blank" class="btn">زيارة الصفحة</a>
-            </div>
+            <a href="#guides" class="text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2">
+                <i class="fa-solid fa-circle-question"></i>
+                <span>دليل التثبيت</span>
+            </a>
         </div>
+    </header>
 
-        <!-- Instructional Guides Section with Images -->
-        <div class="guides-section">
-            <div class="section-title">إرشادات استخدام وتثبيت التطبيق</div>
+    <!-- Hero Section -->
+    <section class="hero-bg py-16 md:py-24 px-4 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium mb-6">
+                <i class="fa-solid fa-star text-gold-400 text-xs"></i>
+                <span>تطبيقات إسلامية مجانية وخالية من الإعلانات</span>
+            </div>
+            <h1 class="quran-title text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                بسم الله الرحمن الرحيم
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+                نقدم لكم مجموعة من أفضل التطبيقات الدينية والتلاوات الخاشعة للقرآن الكريم للجوال بأسلوب حديث وسهل الاستخدام.
+            </p>
             
-            <!-- Guide 1 -->
-            <div class="guide-card">
-                <h3>طريقة تحميل القرآن الكريم وتشغيله</h3>
-                <!-- Replace 'guide-image-1.png' with your actual image filename or path -->
-                <img src="./images/guide-image-1.png" alt="طريقة تحميل القرآن الكريم وتشغيله" class="guide-img">
-            </div>
-
-            <!-- Guide 2 -->
-            <div class="guide-card">
-                <h3>تحميل وتثبيت تطبيق القرآن من الموقع</h3>
-                <!-- Replace 'guide-image-2.png' with your actual image filename or path -->
-                <img src="./images/guide-image-2.png" alt="تحميل وتثبيت تطبيق القرآن من الموقع" class="guide-img">
+            <!-- Quick Actions Buttons -->
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://t.me/mp30qurantv" target="_blank" class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition-all shadow-lg shadow-emerald-600/30 hover:scale-105">
+                    <i class="fa-brands fa-telegram text-xl"></i>
+                    <span>قناة التلاوات الخاشعة</span>
+                </a>
+                <a href="https://facebook.com/mp30quran" target="_blank" class="flex items-center gap-3 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-white font-bold border border-white/10 transition-all hover:scale-105">
+                    <i class="fa-brands fa-facebook text-xl text-blue-400"></i>
+                    <span>صفحة الفيسبوك</span>
+                </a>
             </div>
         </div>
+    </section>
 
-        <!-- Contact Section -->
-        <div class="contact">
-            <p>للاستفسارات والأسئلة، تواصل معنا عبر البريد الإلكتروني:<br>
-            <a href="mailto:mp30quran@gmail.com">mp30quran@gmail.com</a></p>
+    <!-- Social & Links Cards -->
+    <section class="max-w-6xl mx-auto px-4 py-12 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Telegram Card -->
+            <div class="glass-card p-6 rounded-2xl flex items-center justify-between transition-all">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl">
+                        <i class="fa-brands fa-telegram"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">تيليجرام</h3>
+                        <p class="text-sm text-gray-400">استمع لأروع التلاوات المقرأة يومياً</p>
+                    </div>
+                </div>
+                <a href="https://t.me/mp30qurantv" target="_blank" class="px-4 py-2 rounded-lg bg-blue-500/20 text-blue-300 border border-blue-500/30 text-sm font-semibold hover:bg-blue-500/30 transition-colors">
+                    انضمام
+                </a>
+            </div>
+
+            <!-- Facebook Card -->
+            <div class="glass-card p-6 rounded-2xl flex items-center justify-between transition-all">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-600/10 border border-blue-600/20 flex items-center justify-center text-blue-500 text-2xl">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">فيسبوك</h3>
+                        <p class="text-sm text-gray-400">تابع أحدث التحديثات والتطبيقات</p>
+                    </div>
+                </div>
+                <a href="https://facebook.com/mp30quran" target="_blank" class="px-4 py-2 rounded-lg bg-blue-600/20 text-blue-300 border border-blue-600/30 text-sm font-semibold hover:bg-blue-600/30 transition-colors">
+                    متابعة
+                </a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Guides Section (Images Display) -->
+    <section id="guides" class="max-w-6xl mx-auto px-4 py-12 w-full border-t border-white/5">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-white mb-3">شرح استخدام وتثبيت التطبيقات</h2>
+            <p class="text-gray-400 max-w-xl mx-auto">خطوات بسيطة وموضحة للتحميل والتثبيت والتشغيل بسهولة على هاتفك المحمول</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Guide Card 1 -->
+            <div class="glass-card p-5 rounded-2xl flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm border border-emerald-500/30">1</span>
+                    <h3 class="text-lg font-bold text-white">طريقة تحميل القرآن الكريم وتشغيله</h3>
+                </div>
+                <div class="bg-black/40 rounded-xl p-2 border border-white/5 overflow-hidden group">
+                    <img src="./images/guide-image-1.png" alt="طريقة تحميل القرآن الكريم وتشغيله" class="w-full h-auto rounded-lg transition-transform duration-500 group-hover:scale-105">
+                </div>
+            </div>
+
+            <!-- Guide Card 2 -->
+            <div class="glass-card p-5 rounded-2xl flex flex-col">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-8 h-8 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center text-sm border border-emerald-500/30">2</span>
+                    <h3 class="text-lg font-bold text-white">تحميل وتثبيت تطبيق القرآن من الموقع</h3>
+                </div>
+                <div class="bg-black/40 rounded-xl p-2 border border-white/5 overflow-hidden group">
+                    <img src="./images/guide-image-2.png" alt="تحميل وتثبيت تطبيق القرآن من الموقع" class="w-full h-auto rounded-lg transition-transform duration-500 group-hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Banner -->
+    <section class="max-w-6xl mx-auto px-4 py-12 w-full">
+        <div class="glass-card p-8 rounded-3xl text-center relative overflow-hidden bg-gradient-to-r from-emerald-950/40 via-emerald-900/20 to-emerald-950/40 border border-emerald-500/20">
+            <i class="fa-solid fa-envelope-open-text text-4xl text-emerald-400 mb-4 inline-block"></i>
+            <h3 class="text-xl font-bold text-white mb-2">هل لديك أي استفسار أو سؤال؟</h3>
+            <p class="text-gray-400 mb-6">فريقنا يسعد دائماً بالرد على جميع استفساراتكم عبر البريد الإلكتروني</p>
+            <a href="mailto:mp30quran@gmail.com" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold border border-white/10 transition-all">
+                <i class="fa-regular fa-envelope"></i>
+                <span>mp30quran@gmail.com</span>
+            </a>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <div class="footer">
-        <p>🌿✨ نسأل الله أن يتقبل منا ومنكم صالح الأعمال ✨🌿</p>
-    </div>
-</div>
+    <footer class="border-t border-white/10 py-8 bg-[#08120d] text-center text-gray-400 text-sm">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-leaf text-emerald-500"></i>
+                <span class="text-gray-300 font-medium">نسأل الله أن يتقبل منا ومنكم صالح الأعمال</span>
+            </div>
+            <p class="text-gray-500">جميع الحقوق محفوظة &copy; mp30quran</p>
+        </div>
+    </footer>
 
 </body>
 </html>
